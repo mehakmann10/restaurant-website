@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasa Grill</title>
+    <meta name="title" content="Brasa Grill - Where Fire meets Flavor">
+    <meta name="description" content="A modern and responsive restaurant website using HTML, CSS and Javascript.">
+    <link rel="shortcut icon" href="images/favicon.svg" type="svg">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- PRELOAD IMAGES -->
+    <link rel="preload" as="image" href="images/hero-slider-1.jpg">
+    <link rel="preload" as="image" href="images/hero-slider-2.jpg">
+    <link rel="preload" as="image" href="images/hero-slider-3.jpg">
+    <link rel="preload" as="image" href="images/hero-slider-4.jpg">
+    <link rel="preload" as="image" href="images/hero-slider-5.jpg">
+</head>
+
+<body id="top">
+    <!-- TOPBAR -->
+    <div class="topbar" data-topbar>
+        <div class="container">
+            <div class="topbar-section">
+                <address class="topbar-item">
+                    <div class="icon">
+                        <ion-icon name="location-outline"></ion-icon>
+                    </div>
+                    <span class="span hover-gold">125 Heritage Avenue, New Delhi-110001</span>
+                </address>
+
+                <div class="separator"></div>
+
+                <div class="topbar-item">
+                    <div class="icon">
+                        <ion-icon name="time-outline"></ion-icon>
+                    </div>
+                    <span class="span">Daily: 10:00am - 11:00pm</span>
+                </div>
+            </div>
+
+            <div class="topbar-section">
+                <div class="topbar-item">
+                    <div class="highlight">New</div>
+                    <a href="#" class="glow-effect special-text label-2">Summer Special Menu Now Available</a>
+                </div>
+            </div>
+
+            <div class="topbar-section">
+                <a href="tel:+919876543210" class="topbar-item">
+                    <div class="icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                    <span class="span hover-gold">+91-98765-43210</span>
+                </a>
+
+                <div class="separator"></div>
+
+                <a href="mailto:contact@brasa.com" class="topbar-item">
+                    <div class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <span class="span hover-gold">contact@brasa.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER (NAVBAR & SIDEBAR) -->
+    <header class="header">
+        <!-- NAVBAR -->
+        <nav class="navbar" data-navbar>
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="images/logo.png" width="300" alt="brasa-grill">
+                </a>
+
+                <div class="navbar-links">
+                    <ul class="navbar-list">
+                        <li class="navbar-item">
+                            <div class="separator"></div>
+                            <a href="#home" class="navbar-link hover-underline">Home</a>
+                        </li>
+
+                        <li class="navbar-item link">
+                            <div class="separator"></div>
+                            <a href="#menu" class="navbar-link hover-underline">Menu</a>
+                        </li>
+
+                        <li class="navbar-item link">
+                            <div class="separator"></div>
+                            <a href="#private-dining" class="navbar-link hover-underline">Private Dining</a>
+                        </li>
+
+                        <li class="navbar-item link">
+                            <div class="separator"></div>
+                            <a href="#reservation" class="navbar-link hover-underline">Reservation</a>
+                        </li>
+
+                        <li class="navbar-item link">
+                            <div class="separator"></div>
+                            <a href="#order-online" class="navbar-link hover-underline">Order Online</a>
+                        </li>
+
+                        <li class="navbar-item link drop-down" data-dropdown>
+                            <a href="#" class="navbar-link hover-underline">Restaurant</a>
+                            <div class="icon cursor">
+                                <ion-icon name="chevron-down-outline"></ion-icon>
+                            </div>
+                            <div class="dropdown-section">
+                                <a href="#about" class="dropdown-item hover-gold">About</a>
+                                <a href="#about" class="dropdown-item hover-gold">Contact</a>
+                            </div>
+                        </li>
+
+
+                        <li class="navbar-item link">
+                            <div class="separator"></div>
+                            <a href="#" class="navbar-link hover-underline">Gallery</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="book-table-btn">
+                    <button class="btn btn-primary">
+                        <span class="text text-1">Find A Table</span>
+                        <span class="text text-2" aria-hidden="true">Find A Table</span>
+                    </button>
+                </div>
+
+                <div class="hamburger-menu cursor" data-nav-toggle data-hamburger-menu>
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                </div>
+            </div>
+
+
+        </nav>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar text-center" data-sidebar>
+
+            <div class="close-btn cursor" data-close-btn data-nav-toggle>
+                <div class="icon">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+            </div>
+            <a href="#" class="logo">
+                <img src="images/logo.png" width="300" alt="brasa-grill">
+            </a>
+
+            <div class="sidebar-links">
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <div class="separator"></div>
+                        <a href="#home" class="sidebar-link">Home</a>
+                    </li>
+
+                    <li class="sidebar-item link">
+                        <div class="separator"></div>
+                        <a href="#menu" class="sidebar-link">Menu</a>
+                    </li>
+
+                    <li class="sidebar-item link">
+                        <div class="separator"></div>
+                        <a href="#private-dining" class="sidebar-link">Private Dining</a>
+                    </li>
+
+                    <li class="sidebar-item link">
+                        <div class="separator"></div>
+                        <a href="#reservation" class="sidebar-link">Reservation</a>
+                    </li>
+
+                    <li class="sidebar-item link">
+                        <div class="separator"></div>
+                        <a href="#order-online" class="sidebar-link">Order Online</a>
+                    </li>
+
+                    <li class="sidebar-item sidebar-dropdown-section link">
+                        <div class="flex-r" data-sidebar-dropdown-section>
+                            <div class="separator"></div>
+                            <a href="#">Restaurant</a>
+                            <div class="icon cursor">
+                                <ion-icon name="chevron-down-outline"></ion-icon>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-dropdown" data-sidebar-dropdown-item>
+                            <a href="#" class="sidebar-link">About</a>
+                            <a href="#" class="sidebar-link">Contact</a>
+                        </div>
+                    </li>
+
+                    <li class="sidebar-item link">
+                        <div class="separator"></div>
+                        <a href="#" class="sidebar-link">Gallery</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="sidebar-section text-center">
+                <p class="title-1 fraunces">Visit Us</p>
+                <address class="sidebar-item text-center">
+                    125 Heritage Avenue,<br>
+                    New Delhi-110001
+                </address>
+
+                <div class="sidebar-item text-center">
+                    Open: 10:00am - 11:00pm
+                </div>
+
+                <a href="mailto:contact@brasa.com" class="sidebar-item hover-gold text-center">contact@brasa.com</a>
+
+                <div class="separator"></div>
+
+                <p class="sidebar-item body-3 text-center text-booking">Booking Request</p>
+
+                <a href="tel:+919876543210" class="hover-underline body-1 text-center text-phone">+91-98765-43210</a>
+            </div>
+        </div>
+        <div class="overlay" data-overlay data-nav-toggle></div>
+
+
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
