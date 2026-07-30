@@ -15,25 +15,25 @@ const topbar = document.querySelector("[data-topbar]")
 
 
 const navbarAtTop = () => {
-    if (window.innerWidth > 1250 ) {
+    if (window.innerWidth > 1250) {
         if (topbar.style.display == 'none') {
             navbar.style.top = '0';
         } else {
             navbar.style.top = '8%';
         }
-    }else{
+    } else {
         topbar.style.display = 'none';
     }
 }
 const updateTopbar = () => {
-    if(window.innerWidth > 1250){
+    if (window.innerWidth > 1250) {
         topbar.style.display = 'grid';
         navbar.style.top = '8%';
 
-    }else{
+    } else {
         topbar.style.display = 'none';
         navbar.style.top = '0';
-    }  
+    }
 };
 window.addEventListener('load', updateTopbar);
 window.addEventListener('resize', updateTopbar);
@@ -58,7 +58,7 @@ window.addEventListener('scroll', () => {
         topbar.style.display = 'none';
         hideHeader();
     } else {
-        if(window.innerWidth > 1250){
+        if (window.innerWidth > 1250) {
             topbar.style.display = 'grid';
         }
         navbar.classList.remove('active');
@@ -97,4 +97,57 @@ closeBtn.addEventListener('click', () => {
     document.body.classList.remove("no-scroll");
     sidebar.classList.remove('active');
     overlay.classList.remove('active');
+})
+
+// HERO SLIDER
+const heroSlider = document.querySelector("[data-hero-slider]")
+const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
+const arrowPrev = document.querySelector('.arrow-back');
+const arrowNext = document.querySelector('.arrow-next');
+let itemNum = 0;
+let prevItem = 0;
+arrowPrev.addEventListener('click', () => {
+    if (itemNum == 0) {
+        itemNum = 4;
+    } else {
+        itemNum--;
+    }
+    changeSlider();
+})
+arrowNext.addEventListener('click', changeNext);
+function changeNext(){
+    if (itemNum == 4) {
+        itemNum = 0;
+    } else {
+        itemNum++;
+    }
+    changeSlider();
+}
+
+const changeSlider = () => {
+    heroSliderItems[prevItem].classList.remove('active');
+    heroSliderItems[itemNum].classList.add('active');
+    prevItem = itemNum;
+    // if (itemNum == 4) {
+    //     itemNum = 0;
+    // } else {
+    //     itemNum++;
+    // }
+}
+let autoSlideInterval;
+const autoSlide = () => {
+    autoSlideInterval = setInterval(() => {
+        changeNext();
+    }, 7000);
+
+}
+window.addEventListener('load', () => {
+    autoSlide();
+})
+
+heroSlider.addEventListener('mouseover',() => {
+    clearInterval(autoSlideInterval);
+})
+heroSlider.addEventListener('mouseout', () => {
+    autoSlide();
 })
