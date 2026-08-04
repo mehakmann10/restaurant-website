@@ -151,3 +151,35 @@ heroSlider.addEventListener('mouseover',() => {
 heroSlider.addEventListener('mouseout', () => {
     autoSlide();
 })
+
+// ANimation Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll('.animate');
+hiddenElements.forEach((el) => observer.observe(el));
+
+// MENU SLIDE WRAPPER
+const wrapper = document.querySelector('.slide-items');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+function getScrollAmount() {
+  const slideItem = wrapper.querySelector('.slide-item');
+  const slideItemWidth = slideItem.getBoundingClientRect().width;
+  const gap = parseFloat(getComputedStyle(wrapper).gap) || 0;
+  return slideItemWidth + gap;
+}
+
+nextBtn.addEventListener('click', () => {
+  wrapper.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  wrapper.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+});
