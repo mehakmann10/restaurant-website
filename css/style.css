@@ -1352,6 +1352,7 @@ body.no-scroll {
 /* --------------------------------------------- */
 .special-menu .container {
     position: relative;
+    height: 100%;
 }
 
 .special-menu-bg {
@@ -1416,7 +1417,6 @@ body.no-scroll {
 .slide-item {
     transition: var(--transition-1);
     pointer-events: all;
-    z-index: 100;
     cursor: pointer;
     /* justify-content: space-evenly; */
     flex: 0 0 calc(33.333% - 14px);
@@ -1476,6 +1476,7 @@ body.no-scroll {
     margin-block-start: 10px;
     transform-origin: top;
 }
+
 .special-menu button {
     display: inline-block;
     border-radius: 50%;
@@ -1484,33 +1485,293 @@ body.no-scroll {
     background-color: var(--gold);
     text-align: center;
 }
-.special-menu-btn{
+
+.special-menu-btn {
     gap: 20px;
     text-align: center;
     margin-inline-start: 48%;
     margin-block-start: 15px;
 }
-#prev-btn:hover{
+
+#prev-btn:hover {
     transition: var(--transition-1);
     color: var(--dark-gold);
     background-color: white;
 }
-#next-btn:hover{
+
+#next-btn:hover {
     transition: var(--transition-1);
     color: var(--dark-gold);
     background-color: white;
 }
-.special-menu-btn .btn-primary{
+
+.special-menu-btn .btn-primary {
     padding: 10px 20px;
 }
 
+/* --------------------------------------------- */
+/* FEATURES SECTION */
+/* --------------------------------------------- */
+.features-section {
+    position: relative;
+    max-width: 1200px;
+    height: max-content;
+    margin: 100px auto;
+    overflow: hidden;
+}
 
-/* --------------------------------------------- */
-/* --------------------------------------------- */
+.features-items {
+    position: relative;
+    padding: 7rem 2rem;
+}
 
-/* --------------------------------------------- */
+.timeline {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 0;
+    background: var(--gold);
+    top: 5%;
+    left: 48.5%;
+    margin: -3px;
+    z-index: -1;
+    transition: var(--transition-1);
+}
+
+.features-item {
+    position: relative;
+    width: 40%;
+    background-color: var(--white-alpha-20);
+    background:
+        linear-gradient(180deg,
+            rgba(55, 42, 30, .95),
+            rgba(28, 22, 18, .95));
+
+    border: 1px solid rgba(212, 175, 55, .15);
+    box-shadow: 0px 4px 0px 2px #a6a6a6;
+    border-radius: 10px;
+    padding: 25px;
+    color: white;
+    margin: 4rem;
+    margin-inline-end: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition: var(--transition-2);
+    padding-top: 2rem;
+}
+
+.features-item.display {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@keyframes movedown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.features-item .icon {
+    position: absolute;
+    background-color: var(--dark-gold);
+    border-radius: 50%;
+    right: -80px;
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: var(--transition-1);
+    transform: scale(0.5);
+}
+
+@keyframes scale-icon {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.right-container {
+    transform: translateX(100%);
+}
+
+.left-container {
+    transform: translateX(-100%);
+}
+
+.card-1.display {
+    transition: var(--transition-3);
+    transform: translateX(0) scale(1.03);
+}
+
+.card-2.display {
+    transition: var(--transition-3);
+    transform: translateX(0) scale(1.03);
+}
+
+.card-3.display {
+    transition: var(--transition-3);
+    transform: translateX(0) scale(1.03);
+}
+
+.card-4.display {
+    transition: var(--transition-3);
+    transform: translateX(0) scale(1.03);
+}
+
+.card-5.display {
+    transition: var(--transition-3);
+    transform: translateX(0) scale(1.03);
+}
+
+.card-1.display .icon {
+    opacity: 1;
+    visibility: visible;
+    animation: scale-icon 1s linear forwards;
+}
+
+.card-2.display .icon {
+    opacity: 1;
+    visibility: visible;
+    animation: scale-icon 2s linear forwards;
+
+}
+
+.card-3.display .icon {
+    opacity: 1;
+    visibility: visible;
+    animation: scale-icon 2s linear forwards;
+
+}
+
+.card-4.display .icon {
+    opacity: 1;
+    visibility: visible;
+    animation: scale-icon 2s linear forwards;
+
+}
+
+.card-5.display .icon {
+    opacity: 1;
+    visibility: visible;
+    animation: scale-icon 2s linear forwards;
+
+}
+
+.left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 30px;
+    right: -9.5px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 10px solid rgba(55, 42, 30, .95);
+
+}
+
+.right-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 30px;
+    left: -9.5px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 10px solid rgba(55, 42, 30, .95);
+
+}
+
+.features-item:hover {
+    transform: translateY(-15px) scale(1.03);
+}
+
+.features-item:hover .icon {
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+
+
+.right-container .icon {
+    right: auto;
+    left: -75px;
+}
+
+.features-item .icon ion-icon,
+.features-item .icon img {
+    width: 40px;
+    height: 40px;
+    color: white;
+
+}
+
+.features-title {
+    text-transform: uppercase;
+    font-weight: var(--weight-regular);
+    font-family: var(--fontFamily-fraunces);
+    font-size: var(--fontSize-body-1);
+    color: var(--gold);
+}
+
+.features-subtitle {
+    font-weight: var(--weight-bold);
+    padding-block: 1rem;
+    line-height: var(--lineHeight-3);
+    font-size: var(--fontSize-title-3);
+}
+
+.right-container {
+    left: 50%;
+}
+
+/* ----------------------------------------------- */
+/* GALLERY SECTION */
+/* ----------------------------------------------- */
+
+
+/* ----------------------------------------------- */
+/* PRIVATE DINING SECTION */
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* TESTIMONALS */
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* TEAM SECTION */
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* RESERVATION SECTION */
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* FAQ SECTION */
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* SUBSCRIBE SECTION */
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* FOOTER */
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
 /* MEDIA QUERIES */
-/* --------------------------------------------- */
+/* ----------------------------------------------- */
 
 /* TOPBAR */
 @media (max-width:1250px) {
@@ -1531,6 +1792,45 @@ body.no-scroll {
 
     .hero .hero-slider {
         padding-block-start: 20vh;
+    }
+
+    /* FEATURES SECTION */
+    .features-section {
+        margin: 50px auto;
+
+    }
+
+    .right-container {
+        left: 0;
+    }
+
+    .features-item {
+        width: 90%;
+
+    }
+
+    .timeline {
+        top: 0;
+        left: 25px;
+    }
+
+    .left-container-arrow {
+        top: 30px;
+        left: -9.5px;
+        z-index: 1;
+        border-left: none;
+        border-right: 10px solid var(--white-alpha-20);
+
+    }
+
+    .right-container .icon {
+        right: auto;
+        left: -70px;
+    }
+
+    .left-container .icon {
+        right: auto;
+        left: -70px;
     }
 
 
@@ -1736,7 +2036,7 @@ body.no-scroll {
     }
 
     .slide-items {
-        justify-content:flex-start;
+        justify-content: flex-start;
     }
 
     .special-menu .headline-1 {
@@ -1825,7 +2125,7 @@ body.no-scroll {
         z-index: -10;
     }
 
-    .special-menu .container{
+    .special-menu .container {
         margin-block-start: clamp(30rem, 30vh, 40rem);
     }
 }

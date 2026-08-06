@@ -115,7 +115,7 @@ arrowPrev.addEventListener('click', () => {
     changeSlider();
 })
 arrowNext.addEventListener('click', changeNext);
-function changeNext(){
+function changeNext() {
     if (itemNum == 4) {
         itemNum = 0;
     } else {
@@ -145,7 +145,7 @@ window.addEventListener('load', () => {
     autoSlide();
 })
 
-heroSlider.addEventListener('mouseover',() => {
+heroSlider.addEventListener('mouseover', () => {
     clearInterval(autoSlideInterval);
 })
 heroSlider.addEventListener('mouseout', () => {
@@ -154,11 +154,11 @@ heroSlider.addEventListener('mouseout', () => {
 
 // ANimation Observer
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
 });
 
 const hiddenElements = document.querySelectorAll('.animate');
@@ -170,16 +170,68 @@ const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
 function getScrollAmount() {
-  const slideItem = wrapper.querySelector('.slide-item');
-  const slideItemWidth = slideItem.getBoundingClientRect().width;
-  const gap = parseFloat(getComputedStyle(wrapper).gap) || 0;
-  return slideItemWidth + gap;
+    const slideItem = wrapper.querySelector('.slide-item');
+    const slideItemWidth = slideItem.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(wrapper).gap) || 0;
+    return slideItemWidth + gap;
 }
 
 nextBtn.addEventListener('click', () => {
-  wrapper.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    wrapper.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
 });
 
 prevBtn.addEventListener('click', () => {
-  wrapper.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    wrapper.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
 });
+
+// FEATURES TIMELINE SCROLL 
+const timeline = document.querySelector('.timeline');
+const featuresSection = document.querySelector(".features-section");
+const card1 = document.querySelector(".card-1");
+const card2 = document.querySelector(".card-2");
+const card3 = document.querySelector(".card-3");
+const card4 = document.querySelector(".card-4");
+const card5 = document.querySelector(".card-5");
+
+let isAnimationCompleted = false;
+
+window.addEventListener('scroll', () => {
+    const rect = featuresSection.getBoundingClientRect();
+    const sectionHeight = featuresSection.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    let progress = (windowHeight - rect.top) / (sectionHeight + windowHeight);
+    progress = Math.max(0, Math.min(progress, 1));
+    if (progress > 0.9) {
+        isAnimationCompleted = true;
+    } 
+
+    if (isAnimationCompleted) {
+        return;
+    }
+
+    timeline.style.height = `${progress * 100}%`;
+
+
+    if (progress > 0.10) {
+        card1.classList.add('display');
+    }
+
+    if (progress > 0.30) {
+        card2.classList.add('display');
+    }
+
+    if (progress > 0.40) {
+        card3.classList.add('display');
+    }
+
+    if (progress > 0.60) {
+        card4.classList.add('display');
+    }
+
+    if (progress > 0.75) {
+        card5.classList.add('display');
+    }
+});
+
+
