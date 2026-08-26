@@ -1,14 +1,14 @@
 // NAVBAR RESTAURANT DROPDOWN
-const resDropdown = document.querySelector("[data-dropdown]");
-const resDropdownSidebar = document.querySelector("[data-sidebar-dropdown-item]");
-const resDropdownSidebarSection = document.querySelector("[data-sidebar-dropdown-section]");
+// const resDropdown = document.querySelector("[data-dropdown]");
+// const resDropdownSidebar = document.querySelector("[data-sidebar-dropdown-item]");
+// const resDropdownSidebarSection = document.querySelector("[data-sidebar-dropdown-section]");
 
-resDropdown.addEventListener('click', () => {
-    resDropdown.classList.toggle('active');
-})
-resDropdownSidebarSection.addEventListener('click', () => {
-    resDropdownSidebar.classList.toggle('active');
-})
+// resDropdown.addEventListener('click', () => {
+//     resDropdown.classList.toggle('active');
+// })
+// resDropdownSidebarSection.addEventListener('click', () => {
+//     resDropdownSidebar.classList.toggle('active');
+// })
 // NAVBAR SCROLL
 const navbar = document.querySelector("[data-navbar]")
 const topbar = document.querySelector("[data-topbar]")
@@ -153,35 +153,32 @@ heroSlider.addEventListener('mouseout', () => {
 })
 
 // ANimation Observer
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-const hiddenElements = document.querySelectorAll('.animate');
-hiddenElements.forEach((el) => observer.observe(el));
-
-// MENU SLIDE WRAPPER
 const wrapper = document.querySelector('.slide-items');
+
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
 function getScrollAmount() {
     const slideItem = wrapper.querySelector('.slide-item');
+
     const slideItemWidth = slideItem.getBoundingClientRect().width;
     const gap = parseFloat(getComputedStyle(wrapper).gap) || 0;
+
     return slideItemWidth + gap;
 }
 
 nextBtn.addEventListener('click', () => {
-    wrapper.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    wrapper.scrollBy({
+        left: getScrollAmount(),
+        behavior: 'smooth'
+    });
 });
 
 prevBtn.addEventListener('click', () => {
-    wrapper.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    wrapper.scrollBy({
+        left: -getScrollAmount(),
+        behavior: 'smooth'
+    });
 });
 
 // FEATURES TIMELINE SCROLL 
