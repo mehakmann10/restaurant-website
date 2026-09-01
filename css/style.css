@@ -2881,9 +2881,7 @@ body.no-scroll {
         display: none;
     }
 
-    .special-menu .container {
-        /* margin-block-start: clamp(20rem, 30rem, 40rem); */
-    }
+    
 
     .slide-items {
         justify-content: flex-start;
