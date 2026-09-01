@@ -1315,7 +1315,7 @@ body.no-scroll {
 
 .disc-menu-card {
     padding: 3rem;
-    background: url(/images/10026.jpg);
+    background: url(./images/10026.jpg);
     background-size: cover;
     color: var(--eerie-black-4);
     display: flex;
