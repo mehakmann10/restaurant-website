@@ -81,6 +81,11 @@ sidebarLinks.forEach(link => {
     })
 })
 menu.addEventListener('click', () => {
+    let scrollTop = window.scrollY;
+    let viewportHeight = window.innerHeight;
+    let sidebarHeight = viewportHeight;
+    sidebar.style.top = `${scrollTop}px`;
+    // sidebar.style.height = `${sidebarHeight}px`;
     sidebar.classList.add('active');
     document.body.classList.add("no-scroll");
     overlay.classList.add('active');
@@ -201,7 +206,7 @@ window.addEventListener('scroll', () => {
     progress = Math.max(0, Math.min(progress, 1));
     if (progress > 0.9) {
         isAnimationCompleted = true;
-    } 
+    }
 
     if (isAnimationCompleted) {
         return;

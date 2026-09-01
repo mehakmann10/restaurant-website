@@ -807,7 +807,7 @@ body.no-scroll {
     left: 0;
     z-index: 100;
     width: 370px;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--eerie-black-4);
     padding: 20px;
     overflow: scroll;
