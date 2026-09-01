@@ -2110,7 +2110,7 @@ body.no-scroll {
 
 .card {
     aspect-ratio: 6 / 4;
-    background: linear-gradient(180deg,rgba(55, 42, 30, .95),rgba(28, 22, 18, .95));
+    background: linear-gradient(180deg, rgba(55, 42, 30, .95), rgba(28, 22, 18, .95));
     border: 2px solid var(--dark-gold);
     position: absolute;
     transition: transform 800ms cubic-bezier(.05, .43, .25, .95)
@@ -2228,21 +2228,166 @@ body.no-scroll {
 }
 
 /* ----------------------------------------------- */
-/* RESERVATION SECTION */
+/* RESERVATION-NEWSLETTER SECTION */
 /* ----------------------------------------------- */
+.reservation-newsletter {
+    position: relative;
+    height: max-content;
 
-/* ----------------------------------------------- */
-/* FAQ SECTION */
-/* ----------------------------------------------- */
+}
 
-/* ----------------------------------------------- */
-/* SUBSCRIBE SECTION */
-/* ----------------------------------------------- */
+.reservation-newsletter-bg {
+    position: absolute;
+    inset: 0;
+    background: url(../images/img-pattern.svg);
+    background-size: contain;
+    z-index: -10;
+    opacity: 0.4;
+}
+
+.reservation-newsletter .container {
+    display: flex;
+    height: max-content;
+    padding-inline: 10vmin;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20vmin;
+}
+
+.reservation-section,
+.newsletter-section {
+    background: var(--smoky-black-1);
+    padding: 10vmin;
+    width: 50%;
+    margin-block: 5vmin;
+}
+
+.reservation-newsletter .section-heading {
+    font-size: var(--fontSize-title-1);
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing-5);
+    margin-block: 1vmin;
+    color: var(--gold);
+}
+
+.reservation-newsletter .btn {
+    width: max-content;
+    margin-inline: auto;
+}
+
+.reservation-newsletter .section-text a,
+.reservation-newsletter .section-subtitle a {
+    text-transform: lowercase;
+    font-weight: var(--weight-regular);
+    letter-spacing: 1px;
+    color: var(--gold);
+    font-size: var(--fontSize-body-2);
+    margin-block-end: 2vmin;
+    text-align: center;
+    margin-inline: auto;
+
+}
+
+.reservation-newsletter .reservation-section .section-subtitle {
+    color: var(--white);
+}
+
+.reservation-newsletter .section-text a:hover,
+.reservation-newsletter .section-subtitle a:hover {
+    color: var(--gold);
+    transition: var(--transition-1);
+}
+
+.reservation-newsletter .input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-block: 3vmin;
+}
+
+.reservation-newsletter input {
+    background: var(--white-alpha-10);
+    padding: 10px;
+    color: var(--gold);
+    border: none;
+    outline: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.reservation-newsletter .newsletter-section .section-subtitle {
+    margin-block-start: 3vmin;
+}
+
+.reservation-newsletter .icon {
+    padding: 17px;
+    background-color: var(--davys-grey);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
 
 /* ----------------------------------------------- */
 /* FOOTER */
 /* ----------------------------------------------- */
+.footer-section {
+    background-color: var(--black-red);
+    padding-block: 5vmin;
+}
 
+.footer-items {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-item {
+    margin-block: 5vmin;
+    text-align: center;
+}
+.footer-section .footer-links{
+    text-align: center;
+    cursor: pointer;
+}
+.footer-section span{
+    display: inline-block;
+    text-align: center;
+    color: var(--gold);
+}
+.footer-section span:is(:hover, :focus-visible){
+    font-weight: var(--weight-bold);
+    transition: var(--transition-1);
+}
+.footer-section p{
+    margin-block: 1vmin;
+
+}
+.social-handles {
+    display: flex;
+    justify-content: center;
+    gap: 3vmin;
+    margin-block: 2vmin;
+}
+
+.social-handles ion-icon {
+    cursor: pointer;
+    font-size: 4vmin;
+}
+.social-handles ion-icon:hover{
+    color: var(--gold);
+    transition: var(--transition-1);
+}
+.footer-small{
+    text-align: center;
+    font-size: var(--fontSize-label-2);
+    letter-spacing: 0;
+}
+.footer-logo{
+    /* width: 100%;
+    text-align: center;
+    margin-inline: auto; */
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
 /* ----------------------------------------------- */
 /* MEDIA QUERIES */
 /* ----------------------------------------------- */
@@ -2525,7 +2670,21 @@ body.no-scroll {
 
     .card-group>.little-card:nth-child(7) {
         transform: translate(60%, 100%) rotate(-9deg);
+    }
 
+    /* RESERVATION NEWSLETTER */
+    .reservation-newsletter .container {
+        flex-direction: column;
+        margin-inline: auto;
+        gap: 0vmin;
+    }
+
+    .reservation-section,
+    .newsletter-section {
+        width: 100%;
+        max-width: 1000px;
+        margin-inline: auto;
+        margin-block: 5vmin;
     }
 
 
@@ -2946,6 +3105,14 @@ body.no-scroll {
         transform: translate(-100%, -150%) rotate(0deg);
         z-index: 10;
 
+    }
+    /* FOOTER SECTION */
+    .footer-items{
+        flex-direction: column;
+        padding-block-end: 5vmin;
+    }
+    .social-handles ion-icon{
+        font-size: 5vmin;
     }
 
 }
